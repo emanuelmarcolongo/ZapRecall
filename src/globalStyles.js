@@ -46,6 +46,11 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+* {
+font-family: 'Righteous', cursive;
+box-sizing: border-box;
+}
 `
 
 export default GlobalStyle;

@@ -1,31 +1,32 @@
 import styled from 'styled-components';
 
 
-function Bottom() {
+function Footer() {
     return (
-        <Footer>
+        <ContainerFooter>
             <Botoes>
-                <NaoLembrei>Não Lembrei</NaoLembrei>
+                {/* <NaoLembrei>Não Lembrei</NaoLembrei>
                 <QuaseNaoLembrei>Quase não lembrei</QuaseNaoLembrei>
-                <Lembrei>Zap!</Lembrei>
+                <Lembrei>Zap!</Lembrei> */}
             </Botoes>
 
             <p>0/4 CONCLUÍDOS</p>
-        </Footer>
+        </ContainerFooter>
 
     )
 }
 
-export default Bottom;
+export default Footer;
 
-const Footer = styled.div`
-    width: 375px;
-    height: 111px;
+const ContainerFooter = styled.div`
+    width: 100%;
+    height: 70px;
+    border: 3px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background-color: white;
 `

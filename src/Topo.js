@@ -4,8 +4,7 @@ import styled from 'styled-components';
 export default function Topo() {
     return (
         <Titulo>
-            <img src={logo} alt="Logo Raio" />
-            <p>ZapRecall</p>
+           <div>  <img src={logo} alt="Logo Raio" />ZapRecall</div>
         </Titulo>
     )
 }
@@ -18,10 +17,18 @@ const Titulo = styled.div`
     color: white;
     align-items: center;
     justify-content: space-evenly;
-    width: 375px;
+    width: 100%;
     height: 100px;
+    padding: 50px 0;
+    margin: 0 auto;
     img {
         width: 52px;
         height: 60px;
+        margin-right: 25px;
+    }
+    div {
+        display: flex; 
+        align-items: center;
+        justify-content: space-around;
     }
 `

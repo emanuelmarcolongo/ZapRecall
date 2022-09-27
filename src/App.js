@@ -1,6 +1,6 @@
 import GlobalStyle from './globalStyles';
 import Topo from './Topo';
-import Bottom from './Bottom';
+import Footer from './Footer';
 import styled from 'styled-components';
 import Perguntas from './Perguntas';
 
@@ -12,14 +12,15 @@ function App() {
             <GlobalStyle></GlobalStyle>
             <Topo />
             <Perguntas/>
-            <Bottom />
+            <Footer />
         </Conteudo>
     )
 }
 
 const Conteudo = styled.div`
-    width: 375px;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
     background-color: #fb6b6b;
     position: relative;
 `
