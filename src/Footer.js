@@ -13,7 +13,7 @@ function Footer({ contador, arrayRespostas }) {
         <ContainerFooter>
             <p>{contador} / 8 CONCLUÍDOS</p>
             <IconeResposta>
-                {array.map((item, i) =>
+                {arrayRespostas.map((item, i) =>
                     (item === "undefined") ? "" : (item === "vermelho") ? <img key={i} src={cross} />
                         : (item === "laranja") ? <img key={i} src={questionmark} /> : (item === "verde") ? <img key={i} src={check} /> : ""
                 )}

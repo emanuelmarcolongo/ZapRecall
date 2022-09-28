@@ -38,7 +38,9 @@ export default function Pergunta({ pergunta, index, setContador, contador, array
             setCor("#2FBE34")
             arrayRespostas1[index] = (parametro)
         }
-        console.log(arrayRespostas1)
+
+        setArrayRespostas(arrayRespostas1);
+        console.log(arrayRespostas)
         contador1++;
         setContador(contador1)
         setAnswer(true);
@@ -77,7 +79,6 @@ export default function Pergunta({ pergunta, index, setContador, contador, array
 
 
 const ConteinerCard = styled.div`
-    font-family: 'Righteous', cursive;
     margin: 0 auto;
     width: 300px;
     margin-bottom: 15px;

@@ -13,7 +13,11 @@ const perguntas =
     { pergunta: "Usamos estado (state) para __", resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" },
     ]
 
-function Perguntas({setContador, contador, arrayRespostas, setArrayRespostas}) {
+function Perguntas(props) {
+
+    const {setContador, contador, arrayRespostas, setArrayRespostas} = props
+
+
     return (
         <ContainerPerguntas>
             {perguntas.map((item, i) =>  <Pergunta arrayRespostas={arrayRespostas} setArrayRespostas={setArrayRespostas} contador={contador} setContador={setContador} key={i} pergunta={item} index={i}/> )}     
@@ -28,8 +32,7 @@ const ContainerPerguntas = styled.div`
     height: 100%;
     background-color: #fb6b6b;
     min-height: 100vh;
-    margin: 30px auto 71px;
-    padding-bottom: 70px;
+    margin: 0 auto 71px;
 
 `
 

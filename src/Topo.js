@@ -19,7 +19,7 @@ const Titulo = styled.div`
     justify-content: space-evenly;
     width: 100%;
     height: 100px;
-    padding: 50px 0;
+    padding: 100px 0;
     margin: 0 auto;
     img {
         width: 52px;
