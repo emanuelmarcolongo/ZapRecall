@@ -4,13 +4,11 @@ import play from "./assets/img/play-outline-icon.svg"
 import check from "./assets/img/verde.png"
 import questionmark from "./assets/img/laranja.png"
 import cross from "./assets/img/vermelho.png"
+import virar from "./assets/img/setinha.png"
 
 let contador1 = 0;
 const arrayRespostas1 = [];
 export default function Pergunta({ pergunta, index, setContador, contador, arrayRespostas, setArrayRespostas }) {
-
-
-
 
     const [card, setCard] = useState(false)
     const [question, setQuestion] = useState(true)
@@ -44,7 +42,6 @@ export default function Pergunta({ pergunta, index, setContador, contador, array
         setContador(contador1)
         setAnswer(true);
         setCard(false);
-
     }
 
     return (
@@ -54,12 +51,11 @@ export default function Pergunta({ pergunta, index, setContador, contador, array
                     : (cor === "#FF922E") ? <img src={questionmark} />
                         : (cor === "#2FBE34") ? <img src={check} /> : ""}
             </Card>
-
-            <Question onClick={() => clickQuestion()} question={question}>
+            <Question  question={question}>
                 {pergunta.pergunta}
+                <img onClick={() => clickQuestion()} src={virar} />
 
             </Question>
-
             <Answer answer={answer}>
                 {pergunta.resposta}
                 <Botoes>
@@ -67,15 +63,10 @@ export default function Pergunta({ pergunta, index, setContador, contador, array
                     <QuaseNaoLembrei onClick={() => darResposta("laranja", index)}>Quase não lembrei</QuaseNaoLembrei>
                     <Lembrei onClick={() => darResposta("verde", index)}>Lembrei</Lembrei>
                 </Botoes>
-
             </Answer>
-
-
         </ConteinerCard>
     )
 }
-
-
 
 const ConteinerCard = styled.div`
     margin: 0 auto;
@@ -97,7 +88,6 @@ const Card = styled.div`
     color: ${props => (props.cor === "") ? "black" : props.cor};
     text-decoration: ${props => (props.cor === "") ? "none" : "line-through"};
     pointer-events: ${props => (props.cor === "") ? "" : "none"};
-
     img {
         width: 20px;
         height: 23px;
@@ -106,15 +96,21 @@ const Card = styled.div`
 
 `
 const Question = styled.div`
-width: 300px;
-height: 131px;
-background-color: #ffffd4;
-border-radius: 5px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-display: ${props => props.question ? "none" : ""};
+    width: 300px;
+    height: 131px;
+    background-color: #ffffd4;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: ${props => props.question ? "none" : ""};
+    img {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
 
 `
 const Answer = styled.div`
@@ -127,7 +123,6 @@ const Answer = styled.div`
     justify-content: space-around;
     display: ${props => props.answer ? "none" : ""};
     background-color: #FFFFD4;
-
 `
 const Botoes = styled.div`
     width: 300px;
@@ -141,9 +136,7 @@ const Botoes = styled.div`
         color: white;
         width: 70px;
         height: 38px;
-        border-radius: 5px;
-    }
-
+        border-radius: 5px; }
 `
 const NaoLembrei = styled.button`
     background-color: #ff3030;
@@ -152,7 +145,6 @@ const QuaseNaoLembrei = styled.button`
     background-color: #ff922e;
     width: 85px;
     font-size: 11px;
-
 `
 const Lembrei = styled.button`
     background-color: #2fbe34;
