@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import play from "./assets/img/play-outline-icon.svg"
+import Pergunta from './Pergunta';
+
 
 const perguntas =
     [{ pergunta: "O que é JSX?", resposta: "Uma extensão de linguagem do JavaScript" },
@@ -12,17 +13,10 @@ const perguntas =
     { pergunta: "Usamos estado (state) para __", resposta: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" },
     ]
 
-function Perguntas() {
+function Perguntas({setContador, contador, arrayRespostas, setArrayRespostas}) {
     return (
         <ContainerPerguntas>
-            {perguntas.map((p, i) =>
-                <Card>
-                    <div key={i} className="card">Pergunta {i + 1}</div>
-                    {/* <div className="question">{p.pergunta}</div>
-                    <div className="answer">{p.resposta}</div> */}
-                    <img src={play} />
-
-                </Card>)}
+            {perguntas.map((item, i) =>  <Pergunta arrayRespostas={arrayRespostas} setArrayRespostas={setArrayRespostas} contador={contador} setContador={setContador} key={i} pergunta={item} index={i}/> )}     
         </ContainerPerguntas>
     )
 }
@@ -34,28 +28,8 @@ const ContainerPerguntas = styled.div`
     height: 100%;
     background-color: #fb6b6b;
     min-height: 100vh;
-    margin: 30px auto 70px;
+    margin: 30px auto 71px;
+    padding-bottom: 70px;
 
-`
-
-const Card = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    height: 65px;
-    background-color: white;
-    border-radius: 5px;
-    width: 300px;    
- 
-
-    img {
-        width: 20px;
-        height: 23px;
-    }
-    div {
-
-    }
 `
 

@@ -3,16 +3,24 @@ import Topo from './Topo';
 import Footer from './Footer';
 import styled from 'styled-components';
 import Perguntas from './Perguntas';
+import { useState } from 'react';
 
 
 
 function App() {
+
+    const [resultado, setResultado] = [];
+    const [contador, setContador] = useState(0);
+    const [arrayRespostas, setArrayRespostas] = [];
+
     return (
         <Conteudo>
             <GlobalStyle></GlobalStyle>
+            <>
             <Topo />
-            <Perguntas/>
-            <Footer />
+            <Perguntas arrayRespostas={arrayRespostas} setArrayRespostas={setArrayRespostas} contador={contador} setContador={setContador}/>
+            <Footer arrayRespostas={arrayRespostas} contador={contador}/>
+            </>
         </Conteudo>
     )
 }
