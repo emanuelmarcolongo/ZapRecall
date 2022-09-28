@@ -40,7 +40,6 @@ export default function Pergunta({ pergunta, index, setContador, contador, array
         }
 
         setArrayRespostas(arrayRespostas1);
-        console.log(arrayRespostas)
         contador1++;
         setContador(contador1)
         setAnswer(true);
@@ -151,6 +150,8 @@ const NaoLembrei = styled.button`
 `
 const QuaseNaoLembrei = styled.button`
     background-color: #ff922e;
+    width: 85px;
+    font-size: 11px;
 
 `
 const Lembrei = styled.button`
