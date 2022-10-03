@@ -45,23 +45,23 @@ export default function Pergunta({ pergunta, index, setContador, contador, array
     }
 
     return (
-        <ConteinerCard>
-            <Card cor={cor} card={card} onClick={() => clickCard()} > Flashcard {index + 1}
-                {(cor === "") ? <img src={play} /> : (cor === "#FF3030") ? <img src={cross} />
-                    : (cor === "#FF922E") ? <img src={questionmark} />
-                        : (cor === "#2FBE34") ? <img src={check} /> : ""}
+        <ConteinerCard data-identifier="flashcard">
+            <Card  data-identifier="flashcard-show-btn" cor={cor} card={card} onClick={() => clickCard()} > Flashcard {index + 1}
+                {(cor === "") ? <img src={play} /> : (cor === "#FF3030") ? <img data-identifier="flashcard-status" src={cross} />
+                    : (cor === "#FF922E") ? <img data-identifier="flashcard-status" src={questionmark} />
+                        : (cor === "#2FBE34") ? <img data-identifier="flashcard-status" src={check} /> : ""}
             </Card>
-            <Question  question={question}>
+            <Question data-identifier="flashcard-question" question={question}>
                 {pergunta.pergunta}
-                <img onClick={() => clickQuestion()} src={virar} />
+                <img data-identifier="flashcard-show-btn" onClick={() => clickQuestion()} src={virar} />
 
             </Question>
-            <Answer answer={answer}>
+            <Answer data-identifier="flashcard-answer" answer={answer}>
                 {pergunta.resposta}
                 <Botoes>
-                    <NaoLembrei onClick={() => darResposta("vermelho", index)} >Não Lembrei</NaoLembrei>
-                    <QuaseNaoLembrei onClick={() => darResposta("laranja", index)}>Quase não lembrei</QuaseNaoLembrei>
-                    <Lembrei onClick={() => darResposta("verde", index)}>Lembrei</Lembrei>
+                    <NaoLembrei data-identifier="forgot-btn" onClick={() => darResposta("vermelho", index)} >Não Lembrei</NaoLembrei>
+                    <QuaseNaoLembrei data-identifier="almost-forgot-btn" onClick={() => darResposta("laranja", index)}>Quase não lembrei</QuaseNaoLembrei>
+                    <Lembrei data-identifier="zap-btn" onClick={() => darResposta("verde", index)}>Zap !</Lembrei>
                 </Botoes>
             </Answer>
         </ConteinerCard>

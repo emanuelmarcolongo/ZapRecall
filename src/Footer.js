@@ -10,7 +10,7 @@ function Footer({ contador, arrayRespostas }) {
     const array= ["vermelho", "vermelho", "verde", "vermelho", "laranja", "verde", "vermelho", "laranja"]
 
     return (
-        <ContainerFooter>
+        <ContainerFooter data-identifier="flashcard-counter">
             <p>{contador} / 8 CONCLUÍDOS</p>
             <IconeResposta>
                 {arrayRespostas.map((item, i) =>

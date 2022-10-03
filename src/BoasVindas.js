@@ -7,7 +7,7 @@ export default function BoasVindas ({visibilidadeConteudo, setVisibilidadeConteu
         <TelaInicial visibilidadeConteudo={visibilidadeConteudo}>
             <img src={logo} />
             <p>ZapRecall</p>
-            <button onClick={() => setVisibilidadeConteudo("")}>Iniciar Recall!!!</button>
+            <button data-identifier="start-btn" onClick={() => setVisibilidadeConteudo("")}>Iniciar Recall!!!</button>
         </TelaInicial>
     )
 
